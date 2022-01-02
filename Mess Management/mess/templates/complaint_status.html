@@ -1,0 +1,52 @@
+{%include "header.html"%}
+
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Complaint Status</h1>
+                        <br>
+                        <br>
+                    
+                        {%for message in messages %}
+                                        <div class="alert alert-danger" role="alert">{{message}}
+                                        </div>
+                                        {% endfor %} 
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Complaint Status
+                            </div>
+                            
+                            <div class="card-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Complaint No.</th>
+                                            <th>Subject</th>
+                                            <th>Description</th>
+                                            <th>Staus</th>
+                                            <th>Comments</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                        {% for n in complaints%}
+                                        <tr>
+                                            <td>{{n.Complaint_ID}}</td>
+                                            <td>{{n.Subject}}</td>
+                                            <td>{{n.Description}}</td>
+                                            <td>{{n.Status}}</td>
+                                            <td>{{n.Comments}}</td>
+                                        </tr>
+                                       {% endfor %} 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+               
+            </div>
+        </div>
+        
+        {%include "footer.html"%}        

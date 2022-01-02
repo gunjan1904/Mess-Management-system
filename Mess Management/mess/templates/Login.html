@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+	<link href="/static/css/bootstrap4.min.css" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+  </head>
+  <body>
+    
+    <form type="login" method="post" action="{% url 'signin' %}">
+       
+      {% csrf_token %}
+      <div class="contact-form"> 
+        {%for message in messages %}
+      <div class="alert alert-danger" role="alert">{{message}}
+      </div>
+      {% endfor %}
+      <h2>Mess Management</h2>
+      <p><label class="labels">Username</label>
+        <input name="RollN" placeholder="Enter Roll Number" required="required" type="username"></p>
+     
+            
+     
+      <p><label class="labels">Password</label>
+        <input name="password" placeholder="Enter password"  required="required" type="password"></p>
+      
+	  <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Login</button>
+       
+	</div>
+</form>
+<div class="mt-5 text-center">
+    <a class="btn btn-primary profile-button" href="admin/">Sign in as Admin</a>
+    </div>
+
+  </body>
+</html>
